@@ -1,0 +1,185 @@
+.contact-form {
+    width: 100%;
+    margin-top: 20px;
+
+    ul {
+        padding: 0;
+        margin: 0;
+
+        li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            margin-bottom: 10px;
+            opacity: 0;
+            overflow: hidden;
+            display: block;
+            clear: both;
+            position: relative;
+            animation: fadeInUp 2s 2s;
+            animation-fill-mode: forwards;
+        }
+
+        li.half {
+            width: 49%;
+            margin-left: 2%;
+            float: left;
+            clear: none;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+
+    input[type='text'],
+    input[type='email'] {
+        width: 100%;
+        border: 0;
+        background: #115173;
+        height: 50px;
+        font-size: 16px;
+        color: #fff;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    textarea {
+        width: 100%;
+        border: 0;
+        background: #115173;
+        height: 50px;
+        font-size: 16px;
+        color: #fff;
+        padding: 20px;
+        box-sizing: border-box;
+        min-height: 150px;
+        resize: none;
+    }
+
+    .flat-button {
+        color: #ffd700;
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-decoration: none;
+        padding: 8px 10px;
+        border: 1px solid #ffd700;
+        float: left;
+        border-radius: 4px;
+        background: 0 0;
+        text-transform: uppercase;
+        float: right;
+        text-align: center;
+        margin-right: 10px;
+    }
+}
+
+.map-wrap {
+    position: absolute;
+    width: 40%;
+    height: 70vh;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.info-map {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    left: 0;
+    z-index: 999999;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 15px;
+    color: #fff;
+    font-family: 'Helvetica';
+    font-size: 17px;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeIn 1s 1.5s;
+    animation-fill-mode: forwards;
+
+    .france {
+        color: #fff;
+        font-weight: bold;
+    }
+
+    span {
+        font-size: 16px;
+        color: #ffd700;
+    }
+}
+
+@media screen and (max-width: 790px) {
+    #pageContact {
+        height: 100vh;
+        top: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: 'form''map';
+
+        #textContact {
+            grid-area: form;
+            height: 90%;
+            width: calc(100% - 95px);
+            left: 75px;
+
+            h1 {
+                font-size: 35px;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            p {
+                margin: 5px;
+                text-align: center;
+            }
+
+            .contact-form {
+                margin-top: 10px;
+
+                form {
+                    height: 90%;
+
+                    ul {
+
+                        li {
+                            height: 30px;
+
+                            input {
+                                height: 30px;
+                            }
+                        }
+
+                        li:nth-child(4) {
+                            height: 60px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .map-wrap {
+            grid-area: map;
+            height: 90%;
+            right: 20px;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+
+            @media screen and (max-width: 480px) {
+                height: 70%;
+                left: 58%;
+
+                .info-map {
+                    font-size: 10px;
+
+                    span {
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

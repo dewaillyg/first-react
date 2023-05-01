@@ -1,0 +1,195 @@
+@import '../../../node_modules/loaders.css/src/animations/pacman.scss';
+
+.stage-cube-cont {
+    width: 50%;
+    height: 100%;
+    top: 0;
+    padding-top: 18%;
+    margin-left: 0;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+}
+
+.cubespinner {
+    animation-name: spincube;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    transform-style: preserve-3d;
+    transform-origin: 100px 100px 0;
+    margin-left: calc(50% - 100px);
+
+    @media screen and (max-width: 465px) {
+        transform-origin: 50px 50px 0;
+    }
+
+    div {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border: 1px solid #ffd700;
+        background: rgba(255, 255, 255, 0.4);
+        text-align: center;
+        font-size: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 20px 0px lightyellow;
+
+        @media screen and (max-width: 465px) {
+            font-size: 50px;
+            width: 100px;
+            height: 100px;
+            box-shadow: 0 0 10px 0px lightyellow;
+        }
+    }
+
+    .face1 {
+        transform: translateZ(100px);
+
+        @media screen and (max-width: 465px) {
+            transform: translateZ(50px);
+        }
+    }
+
+    .face2 {
+        transform: rotateY(90deg) translateZ(100px);
+
+        @media screen and (max-width: 465px) {
+            transform: rotateY(90deg) translateZ(50px);
+        }
+    }
+
+    .face3 {
+        transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+
+        @media screen and (max-width: 465px) {
+            transform: rotateY(90deg) rotateX(90deg) translateZ(50px);
+        }
+    }
+
+    .face4 {
+        transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
+
+        @media screen and (max-width: 465px) {
+            transform: rotateY(180deg) rotateZ(90deg) translateZ(50px);
+        }
+    }
+
+    .face5 {
+        transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+
+        @media screen and (max-width: 465px) {
+            transform: rotateY(-90deg) rotateZ(90deg) translateZ(50px);
+        }
+    }
+
+    .face6 {
+        transform: rotateX(-90deg) translateZ(100px);
+
+        @media screen and (max-width: 465px) {
+            transform: rotateX(-90deg) translateZ(50px);
+        }
+    }
+}
+
+@keyframes spincube {
+
+    from,
+    to {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+
+    16% {
+        transform: rotateY(-90deg);
+    }
+
+    33% {
+        transform: rotateY(-90deg) rotateZ(90deg);
+    }
+
+    50% {
+        transform: rotateY(-180deg) rotateZ(90deg);
+    }
+
+    66% {
+        transform: rotateY(-270deg) rotateX(90deg);
+    }
+
+    83% {
+        transform: rotateX(90deg);
+    }
+}
+
+
+.loader-hidden {
+    display: none;
+}
+
+.loader-active {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    animation: fadeOut 1s 1s;
+    animation-fill-mode: forwards;
+}
+
+@media screen and (max-width: 865px) {
+
+    #aboutPage {
+        top: 0;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 'text''animation';
+
+        #textZoneAbout {
+            grid-area: text;
+            width: calc(100vw - 90px);
+            left: 75px;
+            text-align: center;
+            top: 45%;
+
+            &>p {
+                margin: 10px auto;
+                text-align: center;
+                font-size: 14px;
+
+                @media screen and (max-width: 400px) {
+                    font-size: 12px;
+                }
+            }
+
+            #aboutTitle {
+                left: 0;
+                margin-bottom: 20px;
+
+                @media screen and (max-width: 465px) {
+                    font-size: 35px;
+                }
+            }
+        }
+
+        .stage-cube-cont {
+            grid-area: animation;
+            padding: 0;
+            padding-top: 45px;
+            width: calc(100vw - 90px);
+
+            @media screen and (max-width: 465px) {
+                width: 100vw;
+                padding-top: 60px;
+                left: 20%;
+            }
+        }
+    }
+
+}

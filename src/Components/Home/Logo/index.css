@@ -1,0 +1,60 @@
+.logo-container {
+  z-index: -1;
+  width: 400px;
+  height: 609px;
+  position: absolute;
+  top: 0;
+  right: 15%;
+  bottom: 0;
+  left: auto;
+  margin: auto;
+}
+
+.logo-container svg {
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  -webkit-transform: rotateZ(30deg) !important;
+          transform: rotateZ(30deg) !important;
+}
+
+@media screen and (max-width: 465px) {
+  .logo-container svg {
+    width: 90%;
+    -webkit-transform: translateX(100px) translateY(50px) rotate(20deg) !important;
+            transform: translateX(100px) translateY(50px) rotate(20deg) !important;
+  }
+}
+
+.logo-container .solid-logo {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  opacity: 0;
+  -webkit-transform: rotateZ(30deg);
+          transform: rotateZ(30deg);
+  z-index: 1;
+}
+
+.svg-container {
+  stroke: #ffd900f1;
+  stroke-width: 8px;
+  opacity: .6;
+}
+
+@media screen and (max-width: 865px) {
+  .svg-container {
+    stroke: #ffd90075;
+  }
+}
+
+@media screen and (max-width: 465px) {
+  .svg-container {
+    stroke: #ffd90034;
+  }
+}
+/*# sourceMappingURL=index.css.map */
